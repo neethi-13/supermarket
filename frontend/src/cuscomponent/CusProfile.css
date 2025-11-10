@@ -1,0 +1,250 @@
+/* Profile Container */
+.cus-profile {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.cus-profile-header {
+  margin-bottom: 2rem;
+}
+
+.cus-profile-header h2 {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin: 0 0 0.5rem 0;
+}
+
+.cus-dark-theme .cus-profile-header h2 {
+  color: #ffffff;
+}
+
+.cus-profile-header p {
+  color: #6b7280;
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+.cus-dark-theme .cus-profile-header p {
+  color: #9ca3af;
+}
+
+/* Profile Content - Two Column Layout */
+.cus-profile-content {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: 2rem;
+}
+
+@media (max-width: 968px) {
+  .cus-profile-content {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Left Panel - Profile Card */
+.cus-profile-card {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 2.5rem 2rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  display: flex;
+  height: 460px;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  
+}
+
+.cus-dark-theme .cus-profile-card {
+  background: #1e293b;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+/* Avatar with Gradient */
+.cus-profile-avatar {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+}
+
+.cus-avatar-initials {
+  font-size: 2.5rem;
+  color: #ffffff;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+/* Profile Info */
+.cus-profile-info {
+  width: 100%;
+}
+
+.cus-profile-info h3 {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin: 0 0 0.5rem 0;
+  letter-spacing: 0.5px;
+}
+
+.cus-dark-theme .cus-profile-info h3 {
+  color: #ffffff;
+}
+
+.cus-profile-owner {
+  color: #6b7280;
+  font-size: 0.95rem;
+  margin: 0 0 0.75rem 0;
+}
+
+.cus-dark-theme .cus-profile-owner {
+  color: #9ca3af;
+}
+
+.cus-profile-id {
+  color: #9ca3af;
+  font-size: 0.875rem;
+  margin: 0;
+  font-family: 'Courier New', monospace;
+  background: #f3f4f6;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  display: inline-block;
+}
+
+.cus-dark-theme .cus-profile-id {
+  background: #334155;
+  color: #cbd5e1;
+}
+
+/* Right Panel - Details */
+.cus-profile-details {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.cus-dark-theme .cus-profile-details {
+  background: #1e293b;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+/* Detail Sections */
+.cus-detail-section {
+  margin-bottom: 2.5rem;
+}
+
+.cus-detail-section:last-child {
+  margin-bottom: 0;
+}
+
+.cus-detail-section h4 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin: 0 0 1.5rem 0;
+  padding-bottom: 0.75rem;
+  border-bottom: 2px solid #e5e7eb;
+}
+
+.cus-dark-theme .cus-detail-section h4 {
+  color: #ffffff;
+  border-bottom-color: #334155;
+}
+
+/* Detail Grid - Two Column */
+.cus-detail-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.25rem;
+}
+
+@media (max-width: 640px) {
+  .cus-detail-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Detail Items - Input Style */
+.cus-detail-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.cus-detail-item label {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #6b7280;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.cus-dark-theme .cus-detail-item label {
+  color: #9ca3af;
+}
+
+.cus-detail-item span {
+  font-size: 0.95rem;
+  color: #1a1a1a;
+  background: #f9fafb;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 0.75rem 1rem;
+  transition: all 0.2s ease;
+}
+
+.cus-dark-theme .cus-detail-item span {
+  color: #ffffff;
+  background: #0f172a;
+  border-color: #334155;
+}
+
+.cus-detail-item span:hover {
+  border-color: #3b82f6;
+  background: #ffffff;
+}
+
+.cus-dark-theme .cus-detail-item span:hover {
+  border-color: #3b82f6;
+  background: #1e293b;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .cus-profile {
+    padding: 1rem;
+  }
+
+  .cus-profile-card {
+    padding: 2rem 1.5rem;
+
+  }
+
+  .cus-profile-details {
+    padding: 1.5rem;
+  }
+
+  .cus-profile-avatar {
+    width: 100px;
+    height: 100px;
+  }
+
+  .cus-avatar-initials {
+    font-size: 2rem;
+  }
+
+  .cus-profile-info h3 {
+    font-size: 1.2rem;
+  }
+}

@@ -1,0 +1,93 @@
+/* State Persistence Controls for Customer */
+.cus-state-controls {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.cus-clear-cart-btn {
+  background: #e74c3c;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.8rem;
+  transition: background-color 0.3s ease;
+}
+
+.cus-clear-cart-btn:hover {
+  background: #c0392b;
+}
+
+.cus-clear-all-btn {
+  background: #95a5a6;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.8rem;
+  transition: background-color 0.3s ease;
+}
+
+.cus-clear-all-btn:hover {
+  background: #7f8c8d;
+}
+
+/* Cart Notice */
+.cus-cart-notice {
+  background: #e8f5e8;
+  border: 1px solid #c8e6c9;
+  border-radius: 6px;
+  padding: 0.75rem;
+  margin-bottom: 1rem;
+  text-align: center;
+  font-weight: 500;
+  color: #2e7d32;
+}
+
+.cus-dark-theme .cus-cart-notice {
+  background: #1b5e20;
+  border-color: #4caf50;
+  color: #c8e6c9;
+}
+
+/* Order Actions with multiple buttons */
+.cus-order-actions {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.cus-order-actions .cus-place-order-btn {
+  flex: 2;
+}
+
+.cus-order-actions .cus-clear-cart-btn {
+  flex: 1;
+}
+
+/* Out of stock style */
+.cus-out-of-stock {
+  color: #e74c3c !important;
+  font-weight: bold;
+}
+
+/* Responsive Design for State Controls */
+@media (max-width: 768px) {
+  .cus-state-controls {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .cus-order-actions {
+    flex-direction: column;
+  }
+  
+  .cus-order-actions .cus-place-order-btn,
+  .cus-order-actions .cus-clear-cart-btn {
+    flex: none;
+    width: 100%;
+  }
+}

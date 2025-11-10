@@ -1,0 +1,576 @@
+.admin-search-section {
+    flex-direction: column;
+  }
+
+  .admin-search-input {
+    width: 100%;
+  }
+
+  .admin-search-btn {
+    width: 100%;
+  }/* Modern Product Management Dashboard */
+
+/* Main Container */
+.admin-add-products {
+  padding: 0;
+  font-family: 'Inter', 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+/* ==================== TOP SECTION: HEADER ==================== */
+
+.admin-products-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.admin-products-header h2 {
+  margin: 0;
+  color: #1a202c;
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+/* Add Product Button */
+.admin-add-product-btn {
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  color: white;
+  border: none;
+  padding: 0.875rem 1.75rem;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 0.938rem;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+}
+
+.admin-add-product-btn::before {
+  content: '+';
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.admin-add-product-btn:hover {
+  background: linear-gradient(135deg, #059669 0%, #047857 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(16, 185, 129, 0.4);
+}
+
+.admin-add-product-btn:active {
+  transform: translateY(0);
+}
+
+/* ==================== SEARCH SECTION ==================== */
+
+.admin-search-section {
+  margin-bottom: 2rem;
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+}
+
+.admin-search-input {
+  flex: 1;
+  padding: 1rem 1.25rem;
+  border: 2px solid #e2e8f0;
+  border-radius: 12px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  background-color: #ffffff;
+  color: #1a202c;
+  font-weight: 500;
+}
+
+.admin-search-input::placeholder {
+  color: #94a3b8;
+  font-weight: 400;
+}
+
+.admin-search-input:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.1);
+  background-color: #ffffff;
+}
+
+/* Search Button */
+.admin-search-btn {
+  background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+  color: white;
+  border: none;
+  padding: 1rem 1.5rem;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 1.125rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 56px;
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+}
+
+.admin-search-btn::before {
+  content: '🔍';
+  font-size: 1.25rem;
+}
+
+.admin-search-btn:hover {
+  background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(59, 130, 246, 0.4);
+}
+
+.admin-search-btn:active {
+  transform: translateY(0);
+}
+
+/* ==================== ADD/EDIT PRODUCT FORM ==================== */
+
+.admin-product-form {
+  background: #ffffff;
+  padding: 2rem;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  margin-bottom: 2rem;
+  border: 1px solid #e2e8f0;
+  animation: slideDown 0.3s ease;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.admin-product-form h3 {
+  margin: 0 0 1.75rem 0;
+  color: #1a202c;
+  font-size: 1.5rem;
+  font-weight: 700;
+  border-bottom: 3px solid #3b82f6;
+  padding-bottom: 0.75rem;
+  display: inline-block;
+}
+
+/* Form Grid */
+.admin-form-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.25rem;
+  margin-bottom: 1.5rem;
+}
+
+.admin-form-grid input,
+.admin-form-grid select {
+  padding: 0.875rem 1rem;
+  border: 2px solid #e2e8f0;
+  border-radius: 10px;
+  font-size: 0.938rem;
+  transition: all 0.3s ease;
+  background-color: #f8fafc;
+  color: #1a202c;
+  font-weight: 500;
+}
+
+.admin-form-grid input::placeholder {
+  color: #94a3b8;
+  font-weight: 400;
+}
+
+.admin-form-grid input:focus,
+.admin-form-grid select:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.1);
+  background-color: #ffffff;
+}
+
+.admin-form-grid input:disabled {
+  background-color: #e2e8f0;
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+/* Form Actions */
+.admin-form-actions {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.admin-save-btn {
+  background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+  color: white;
+  border: none;
+  padding: 0.875rem 2rem;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 0.938rem;
+  font-weight: 600;
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+}
+
+.admin-save-btn:hover {
+  background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(59, 130, 246, 0.4);
+}
+
+.admin-cancel-btn {
+  background-color: #e2e8f0;
+  color: #475569;
+  border: none;
+  padding: 0.875rem 2rem;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 0.938rem;
+  font-weight: 600;
+}
+
+.admin-cancel-btn:hover {
+  background-color: #cbd5e1;
+  transform: translateY(-2px);
+}
+
+/* ==================== PRODUCT LIST TABLE ==================== */
+
+.admin-products-table {
+  background: #ffffff;
+  padding: 2rem;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  overflow-x: auto;
+  border: 1px solid #e2e8f0;
+}
+
+.admin-products-table h3 {
+  margin: 0 0 1.75rem 0;
+  color: #1a202c;
+  font-size: 1.5rem;
+  font-weight: 700;
+  border-bottom: 3px solid #3b82f6;
+  padding-bottom: 0.75rem;
+  display: inline-block;
+}
+
+/* Loading State */
+.admin-loading {
+  text-align: center;
+  padding: 3rem;
+  color: #64748b;
+  font-size: 1.125rem;
+  font-weight: 500;
+}
+
+/* Table Styles */
+.admin-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  min-width: 800px;
+}
+
+.admin-table th,
+.admin-table td {
+  padding: 1rem 1.25rem;
+  text-align: left;
+  font-size: 0.938rem;
+}
+
+.admin-table th {
+  background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%);
+  font-weight: 700;
+  white-space: nowrap;
+  color: #1e293b;
+  text-transform: uppercase;
+  font-size: 0.813rem;
+  letter-spacing: 0.5px;
+  border-bottom: 2px solid #cbd5e1;
+}
+
+.admin-table th:first-child {
+  border-top-left-radius: 10px;
+}
+
+.admin-table th:last-child {
+  border-top-right-radius: 10px;
+}
+
+.admin-table tbody tr {
+  transition: all 0.3s ease;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.admin-table tbody tr:hover {
+  background-color: #f8fafc;
+  transform: scale(1.01);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.admin-table tbody tr:last-child {
+  border-bottom: none;
+}
+
+.admin-table td {
+  color: #334155;
+  font-weight: 500;
+}
+
+/* Edit Button */
+.admin-edit-btn {
+  background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+  color: white;
+  border: none;
+  padding: 0.625rem 1.25rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 0.875rem;
+  font-weight: 600;
+  box-shadow: 0 2px 8px rgba(245, 158, 11, 0.3);
+}
+
+.admin-edit-btn:hover {
+  background: linear-gradient(135deg, #d97706 0%, #b45309 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(245, 158, 11, 0.4);
+}
+
+.admin-edit-btn:active {
+  transform: translateY(0);
+}
+
+/* ==================== DARK THEME ==================== */
+
+.admin-dark-theme {
+  background: #0f172a;
+}
+
+.admin-dark-theme .admin-products-header h2 {
+  color: #f1f5f9;
+}
+
+.admin-dark-theme .admin-search-input {
+  background: #1e293b;
+  border-color: #334155;
+  color: #f1f5f9;
+}
+
+.admin-dark-theme .admin-search-input:focus {
+  border-color: #3b82f6;
+  background: #1e293b;
+}
+
+.admin-dark-theme .admin-search-btn {
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.4);
+}
+
+.admin-dark-theme .admin-search-btn:hover {
+  box-shadow: 0 6px 16px rgba(59, 130, 246, 0.5);
+}
+
+.admin-dark-theme .admin-product-form,
+.admin-dark-theme .admin-products-table {
+  background: #1e293b;
+  border-color: #334155;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.admin-dark-theme .admin-product-form h3,
+.admin-dark-theme .admin-products-table h3 {
+  color: #f1f5f9;
+  border-bottom-color: #3b82f6;
+}
+
+.admin-dark-theme .admin-form-grid input,
+.admin-dark-theme .admin-form-grid select {
+  background: #334155;
+  border-color: #475569;
+  color: #f1f5f9;
+}
+
+.admin-dark-theme .admin-form-grid input:focus,
+.admin-dark-theme .admin-form-grid select:focus {
+  background: #334155;
+  border-color: #3b82f6;
+}
+
+.admin-dark-theme .admin-form-grid input:disabled {
+  background-color: #475569;
+}
+
+.admin-dark-theme .admin-cancel-btn {
+  background-color: #475569;
+  color: #cbd5e1;
+}
+
+.admin-dark-theme .admin-cancel-btn:hover {
+  background-color: #64748b;
+}
+
+.admin-dark-theme .admin-table th {
+  background: linear-gradient(135deg, #334155 0%, #475569 100%);
+  color: #cbd5e1;
+  border-bottom-color: #475569;
+}
+
+.admin-dark-theme .admin-table tbody tr {
+  border-bottom-color: #334155;
+}
+
+.admin-dark-theme .admin-table tbody tr:hover {
+  background-color: #334155;
+}
+
+.admin-dark-theme .admin-table td {
+  color: #cbd5e1;
+}
+
+.admin-dark-theme .admin-loading {
+  color: #94a3b8;
+}
+
+/* ==================== RESPONSIVE DESIGN ==================== */
+
+/* Tablet */
+@media (max-width: 968px) {
+  .admin-products-header h2 {
+    font-size: 1.75rem;
+  }
+
+  .admin-form-grid {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+}
+
+/* Mobile Large */
+@media (max-width: 768px) {
+  .admin-products-header {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .admin-products-header h2 {
+    font-size: 1.5rem;
+  }
+
+  .admin-add-product-btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .admin-product-form,
+  .admin-products-table {
+    padding: 1.5rem;
+  }
+
+  .admin-form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .admin-form-actions {
+    flex-direction: column;
+  }
+
+  .admin-save-btn,
+  .admin-cancel-btn {
+    width: 100%;
+  }
+
+  .admin-table {
+    font-size: 0.875rem;
+  }
+
+  .admin-table th,
+  .admin-table td {
+    padding: 0.75rem 0.875rem;
+  }
+}
+
+/* Mobile Small */
+@media (max-width: 480px) {
+  .admin-add-products {
+    padding: 0;
+  }
+
+  .admin-products-header h2 {
+    font-size: 1.375rem;
+  }
+
+  .admin-product-form,
+  .admin-products-table {
+    padding: 1.25rem;
+    border-radius: 12px;
+  }
+
+  .admin-product-form h3,
+  .admin-products-table h3 {
+    font-size: 1.25rem;
+  }
+
+  .admin-search-input {
+    padding: 0.875rem 0.875rem 0.875rem 2.75rem;
+    font-size: 0.938rem;
+  }
+
+  .admin-search-section::before {
+    font-size: 1rem;
+    left: 0.875rem;
+  }
+
+  .admin-table {
+    font-size: 0.813rem;
+    min-width: 700px;
+  }
+
+  .admin-table th,
+  .admin-table td {
+    padding: 0.625rem 0.75rem;
+  }
+
+  .admin-table th {
+    font-size: 0.75rem;
+  }
+
+  .admin-edit-btn {
+    padding: 0.5rem 1rem;
+    font-size: 0.813rem;
+  }
+}
+
+/* ==================== ANIMATIONS ==================== */
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.admin-products-table,
+.admin-product-form {
+  animation: fadeIn 0.4s ease;
+}
+
+/* Smooth Transitions */
+* {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}

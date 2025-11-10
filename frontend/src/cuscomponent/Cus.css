@@ -1,0 +1,209 @@
+/* Customer Container */
+/* .cus-container {
+  min-height: 100vh;
+  background-color: #f5f5f5;
+  transition: all 0.3s ease;
+}
+
+.cus-dark-theme {
+  background-color: #1a1a1a;
+  color: #ffffff;
+}
+
+.cus-dark-theme .cus-main-content {
+  background-color: #2d2d2d;
+} */
+
+
+
+/* Main Content */
+.cus-main-content {
+  flex: 1;
+  padding: 2rem;
+  background-color: #f8f9fa;
+  transition: all 0.3s ease;
+  min-height: calc(100vh - 80px);
+  overflow-y: auto;
+  margin-left: 250px;
+}
+
+.cus-main-expanded {
+  margin-left: 60px;
+}
+
+.cus-dark-theme .cus-main-content {
+  background-color: #2d2d2d;
+}
+
+
+
+
+/* Small Mobile Phones (360px and below) */
+@media (max-width: 360px) {
+  .cus-navbar {
+    padding: 0.5rem;
+  }
+  
+  .cus-navbar-title {
+    font-size: 0.9rem;
+  }
+  
+  .cus-sidebar-toggle {
+    padding: 0.25rem;
+    font-size: 1rem;
+  }
+  
+  .cus-theme-toggle,
+  .cus-logout-btn {
+    padding: 0.3rem 0.6rem;
+    font-size: 0.7rem;
+  }
+  
+  .cus-main-content {
+    padding: 0.5rem;
+  }
+  
+  .cus-stats-grid,
+  .cus-charts-section {
+    gap: 0.75rem;
+  }
+  
+  .cus-stat-card,
+  .cus-chart-container {
+    padding: 0.75rem;
+  }
+  
+  .cus-stat-value {
+    font-size: 1.8rem;
+  }
+}
+
+/* Landscape Orientation for Mobile */
+@media (max-height: 500px) and (orientation: landscape) {
+  .cus-navbar {
+    padding: 0.5rem 1rem;
+  }
+  
+  .cus-main-content {
+    padding: 1rem;
+    min-height: auto;
+  }
+  
+  .cus-sidebar {
+    height: calc(100vh - 60px);
+  }
+  
+  .cus-sidebar-nav {
+    gap: 0.25rem;
+  }
+  
+  .cus-sidebar-item {
+    padding: 0.5rem;
+  }
+  
+  .cus-stats-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+  }
+  
+  .cus-stat-card {
+    padding: 1rem;
+  }
+}
+
+/* Enhanced Cart Styles */
+.cus-btn-disabled {
+  opacity: 0.6;
+  cursor: not-allowed !important;
+}
+
+.cus-btn-disabled:hover {
+  transform: none !important;
+  background-color: inherit !important;
+}
+
+.cus-cart-stock-info {
+  margin: 0.25rem 0 0 0;
+  color: #7f8c8d;
+  font-size: 0.75rem;
+  font-style: italic;
+}
+
+/* Quantity Input Field */
+.cus-quantity-input {
+  width: 50px;
+  height: 30px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  text-align: center;
+  font-size: 0.9rem;
+  font-weight: bold;
+  background: white;
+}
+
+.cus-dark-theme .cus-quantity-input {
+  background: #5d5d5d;
+  border-color: #666;
+  color: white;
+}
+
+.cus-quantity-input:focus {
+  outline: none;
+  border-color: #27ae60;
+  box-shadow: 0 0 0 2px rgba(39, 174, 96, 0.2);
+}
+
+.cus-quantity-input::-webkit-outer-spin-button,
+.cus-quantity-input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.cus-quantity-input[type=number] {
+  -moz-appearance: textfield;
+}
+
+/* Enhanced Quantity Controls */
+.cus-quantity-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: white;
+  border: 1px solid #e9ecef;
+  border-radius: 6px;
+  padding: 0.25rem;
+}
+
+.cus-dark-theme .cus-quantity-controls {
+  background: #5d5d5d;
+  border-color: #666;
+}
+
+
+
+/* Responsive Design for Quantity Input */
+@media (max-width: 480px) {
+  .cus-quantity-input {
+    width: 40px;
+    height: 28px;
+    font-size: 0.8rem;
+  }
+  
+  .cus-cart-controls {
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+  
+  .cus-quantity-controls {
+    order: 1;
+  }
+  
+  .cus-item-total {
+    order: 2;
+    min-width: auto;
+  }
+  
+  .cus-remove-btn {
+    order: 3;
+  }
+}

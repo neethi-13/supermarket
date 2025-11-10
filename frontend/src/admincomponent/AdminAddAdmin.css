@@ -1,0 +1,250 @@
+/* Add Admin Page - Modern UI Design */
+.admin-add-admin {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f5f7fa 0%, #e4e8ec 100%);
+  display: flex;
+flex-direction: column;
+  padding: 2rem;
+  font-family: 'Inter', 'Poppins', 'Nunito', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+.admin-form{
+    display: flex;
+    justify-content: center;
+    
+}
+
+.admin-add-admin-header {
+  text-align: left;
+  margin-bottom: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.5rem;
+}
+
+.admin-add-admin-header h2 {
+  margin: 0;
+  color: #1f2937;
+  font-size: 2rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.admin-add-admin-header h2::before {
+  content: '👤';
+  font-size: 2rem;
+}
+
+.admin-add-admin-header p {
+  color: #6b7280;
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+.admin-admin-form {
+    
+  background: white;
+  padding: 2.5rem;
+  border-radius: 16px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08), 0 2px 8px rgba(0, 0, 0, 0.04);
+  max-width: 600px;
+  width: 100%;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.admin-form-group {
+  margin-bottom: 1.75rem;
+}
+
+.admin-form-group label {
+  display: block;
+  margin-bottom: 0.625rem;
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: #374151;
+  letter-spacing: 0.01em;
+}
+
+.admin-form-group input {
+  width: 100%;
+  padding: 0.875rem 1rem;
+  border: 1.5px solid #d1d5db;
+  border-radius: 10px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  background-color: #ffffff;
+  color: #1f2937;
+  box-sizing: border-box;
+}
+
+.admin-form-group input::placeholder {
+  color: #9ca3af;
+}
+
+.admin-form-group input:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+  background-color: #fafbfc;
+}
+
+.admin-form-group input:hover {
+  border-color: #9ca3af;
+}
+
+.admin-submit-btn {
+  width: 100%;
+  background: linear-gradient(135deg, #16a34a 0%, #22c55e 100%);
+  color: white;
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 700;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(22, 163, 74, 0.3);
+  letter-spacing: 0.02em;
+  margin-top: 1rem;
+}
+
+.admin-submit-btn:hover:not(:disabled) {
+  background: linear-gradient(135deg, #15803d 0%, #16a34a 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(22, 163, 74, 0.4);
+}
+
+.admin-submit-btn:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.admin-submit-btn:disabled {
+  background: linear-gradient(135deg, #9ca3af 0%, #d1d5db 100%);
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+/* Success and Error Messages */
+.admin-form-group div[style*="color"] {
+  padding: 0.875rem 1rem;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  font-weight: 500;
+  font-size: 0.9rem;
+}
+
+/* Dark Theme */
+.admin-dark-theme .admin-add-admin {
+  background: linear-gradient(135deg, #1f2937 0%, #111827 100%);
+}
+
+.admin-dark-theme .admin-add-admin-header h2 {
+  color: #f9fafb;
+}
+
+.admin-dark-theme .admin-add-admin-header p {
+  color: #9ca3af;
+}
+
+.admin-dark-theme .admin-admin-form {
+  background: #374151;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3), 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.admin-dark-theme .admin-form-group label {
+  color: #f3f4f6;
+}
+
+.admin-dark-theme .admin-form-group input {
+  background: #4b5563;
+  border-color: #6b7280;
+  color: #f9fafb;
+}
+
+.admin-dark-theme .admin-form-group input::placeholder {
+  color: #9ca3af;
+}
+
+.admin-dark-theme .admin-form-group input:focus {
+  background: #374151;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+}
+
+.admin-dark-theme .admin-form-group input:hover {
+  border-color: #9ca3af;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .admin-add-admin {
+    padding: 1.5rem;
+  }
+
+  .admin-admin-form {
+    padding: 2rem;
+  }
+
+  .admin-add-admin-header h2 {
+    font-size: 1.75rem;
+  }
+
+  .admin-add-admin-header h2::before {
+    font-size: 1.75rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .admin-add-admin {
+    padding: 1rem;
+  }
+
+  .admin-admin-form {
+    padding: 1.5rem;
+  }
+
+  .admin-add-admin-header {
+    margin-bottom: 2rem;
+  }
+
+  .admin-add-admin-header h2 {
+    font-size: 1.5rem;
+  }
+
+  .admin-add-admin-header h2::before {
+    font-size: 1.5rem;
+  }
+
+  .admin-add-admin-header p {
+    font-size: 0.9rem;
+  }
+
+  .admin-form-group {
+    margin-bottom: 1.5rem;
+  }
+
+  .admin-form-group input {
+    padding: 0.75rem 0.875rem;
+    font-size: 0.95rem;
+  }
+
+  .admin-submit-btn {
+    padding: 0.875rem 1.5rem;
+    font-size: 0.95rem;
+  }
+}

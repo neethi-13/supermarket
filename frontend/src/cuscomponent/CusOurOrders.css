@@ -1,0 +1,430 @@
+/* Our Orders - Dark Theme Only */
+.cus-our-orders {
+  padding: 0;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.cus-orders-header {
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid #4a4a4a;
+  position: relative;
+}
+
+.cus-orders-header::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 80px;
+  height: 2px;
+  background: linear-gradient(90deg, #2ecc71, #27ae60);
+  border-radius: 2px;
+  box-shadow: 0 0 10px rgba(46, 204, 113, 0.5);
+}
+
+.cus-orders-header h2 {
+  margin: 0 0 0.5rem 0;
+  color: #ecf0f1;
+  font-size: 1.8rem;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.cus-orders-header p {
+  color: #95a5a6;
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+/* Orders List */
+.cus-orders-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+/* Order Card */
+.cus-order-card {
+  background: linear-gradient(145deg, #3d3d3d, #2a2a2a);
+  border-radius: 12px;
+  padding: 1.75rem;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.4), 0 0 0 1px rgba(46, 204, 113, 0.1);
+  border-left: 4px solid #2ecc71;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.cus-order-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(46, 204, 113, 0.08), transparent);
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.cus-order-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 30px rgba(0,0,0,0.5), 0 0 20px rgba(46, 204, 113, 0.2);
+  border-left-width: 5px;
+}
+
+.cus-order-card:hover::before {
+  opacity: 1;
+}
+
+/* Order Header */
+.cus-order-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.25rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #4a4a4a;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.cus-order-id {
+  color: #ecf0f1;
+  font-size: 0.95rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.cus-order-id strong {
+  color: #2ecc71;
+  font-weight: 600;
+  text-shadow: 0 0 10px rgba(46, 204, 113, 0.3);
+}
+
+/* Order Status Badges */
+.cus-order-status {
+  padding: 0.5rem 1rem;
+  border-radius: 25px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+  transition: all 0.3s ease;
+  animation: slideInRight 0.5s ease-out;
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.cus-order-approved {
+  background: linear-gradient(135deg, #27ae60, #2ecc71);
+  color: #ffffff;
+  border: 1px solid #2ecc71;
+  box-shadow: 0 2px 12px rgba(46, 204, 113, 0.4);
+}
+
+.cus-order-approved::before {
+  content: '✓ ';
+  font-weight: bold;
+}
+
+.cus-order-pending {
+  background: linear-gradient(135deg, #f39c12, #f1c40f);
+  color: #2c3e50;
+  border: 1px solid #f1c40f;
+  animation: pulse 2s infinite;
+  box-shadow: 0 2px 12px rgba(241, 196, 15, 0.3);
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+    box-shadow: 0 2px 12px rgba(241, 196, 15, 0.3);
+  }
+  50% {
+    opacity: 0.9;
+    box-shadow: 0 2px 16px rgba(241, 196, 15, 0.5);
+  }
+}
+
+.cus-order-pending::before {
+  content: '⏱ ';
+}
+
+/* Order Details */
+.cus-order-details {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.cus-order-info {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+  padding: 1rem;
+  background: linear-gradient(135deg, #4d4d4d 0%, #3d3d3d 100%);
+  border-radius: 8px;
+  border: 1px solid #5a5a5a;
+}
+
+.cus-order-amount,
+.cus-order-date {
+  font-size: 0.9rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.cus-order-amount strong,
+.cus-order-date strong {
+  color: #95a5a6;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-weight: 500;
+}
+
+.cus-order-amount {
+  color: #2ecc71;
+  font-size: 1.1rem;
+  font-weight: 700;
+  text-shadow: 0 0 10px rgba(46, 204, 113, 0.3);
+}
+
+.cus-order-date {
+  color: #ecf0f1;
+}
+
+/* Products Section */
+.cus-order-products h5 {
+  margin: 0 0 0.75rem 0;
+  color: #ecf0f1;
+  font-weight: 600;
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.cus-products-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.cus-product-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 1rem;
+  background: linear-gradient(135deg, #4d4d4d 0%, #3d3d3d 100%);
+  border-radius: 8px;
+  font-size: 0.875rem;
+  border: 1px solid #5a5a5a;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.cus-product-item::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 3px;
+  background: linear-gradient(180deg, #2ecc71, #27ae60);
+  transform: scaleY(0);
+  transition: transform 0.3s ease;
+  box-shadow: 0 0 10px rgba(46, 204, 113, 0.5);
+}
+
+.cus-product-item:hover {
+  border-color: #2ecc71;
+  box-shadow: 0 2px 10px rgba(46, 204, 113, 0.2), 0 0 20px rgba(46, 204, 113, 0.1);
+  transform: translateX(4px);
+  background: linear-gradient(135deg, #555555 0%, #444444 100%);
+}
+
+.cus-product-item:hover::before {
+  transform: scaleY(1);
+}
+
+.cus-product-name {
+  font-weight: 600;
+  color: #ecf0f1;
+}
+
+.cus-product-quantity {
+  color: #95a5a6;
+  font-weight: 500;
+  padding: 0.25rem 0.75rem;
+  background: rgba(46, 204, 113, 0.15);
+  border-radius: 20px;
+  font-size: 0.8rem;
+  border: 1px solid rgba(46, 204, 113, 0.3);
+}
+
+/* No Orders State */
+.cus-no-orders {
+  text-align: center;
+  padding: 5rem 2rem;
+  color: #95a5a6;
+  animation: fadeIn 0.6s ease-in-out;
+}
+
+.cus-no-orders-icon {
+  font-size: 5rem;
+  margin-bottom: 1.5rem;
+  display: inline-block;
+  animation: float 3s ease-in-out infinite;
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.cus-no-orders h3 {
+  margin: 0 0 1rem 0;
+  color: #ecf0f1;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.cus-no-orders p {
+  font-size: 1rem;
+  max-width: 500px;
+  margin: 0 auto;
+  line-height: 1.6;
+  color: #95a5a6;
+}
+
+/* Loading State */
+.cus-loading {
+  text-align: center;
+  padding: 3rem;
+  color: #95a5a6;
+  font-style: italic;
+  font-size: 1.1rem;
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+/* ============================================= */
+/* MEDIA QUERIES - RESPONSIVE DESIGN */
+/* ============================================= */
+
+/* Tablets (768px and below) */
+@media (max-width: 768px) {
+  .cus-orders-header h2 {
+    font-size: 1.5rem;
+  }
+
+  .cus-order-card {
+    padding: 1.5rem;
+  }
+
+  .cus-order-info {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .cus-order-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .cus-order-status {
+    align-self: flex-start;
+  }
+}
+
+/* Mobile Phones (480px and below) */
+@media (max-width: 480px) {
+  .cus-orders-header {
+    margin-bottom: 1.5rem;
+  }
+
+  .cus-orders-header h2 {
+    font-size: 1.3rem;
+  }
+
+  .cus-orders-header p {
+    font-size: 0.85rem;
+  }
+
+  .cus-order-card {
+    padding: 1.25rem;
+    border-radius: 10px;
+  }
+
+  .cus-order-id {
+    font-size: 0.85rem;
+  }
+
+  .cus-order-status {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.75rem;
+  }
+
+  .cus-order-info {
+    padding: 0.75rem;
+  }
+
+  .cus-product-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+    padding: 0.75rem;
+  }
+
+  .cus-product-quantity {
+    align-self: flex-end;
+  }
+
+  .cus-no-orders {
+    padding: 3rem 1.5rem;
+  }
+
+  .cus-no-orders-icon {
+    font-size: 4rem;
+  }
+
+  .cus-no-orders h3 {
+    font-size: 1.3rem;
+  }
+
+  .cus-no-orders p {
+    font-size: 0.9rem;
+  }
+}
