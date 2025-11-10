@@ -11,7 +11,7 @@ const AdminEmpDashboard = () => {
   const [ordersLoading, setOrdersLoading] = useState(false);
   const [actionLoading, setActionLoading] = useState(null);
   const [showPopup, setShowPopup] = useState(false);
-
+  const API_BASE_URL = window.location.hostname === "localhost" ? "http://localhost:5000" : "https://supermarket-208b.onrender.com/";
   useEffect(() => {
     fetchCustomers();
   }, []);
@@ -19,7 +19,7 @@ const AdminEmpDashboard = () => {
   const fetchCustomers = async () => {
     try {
       setLoading(true);
-      const response = await axios.get('http://localhost:5000/api/users/customers');
+      const response = await axios.get(`${API_BASE_URL}/api/users/customers`);
       setCustomers(response.data.customers || []);
     } catch (error) {
       console.error('Error fetching customers:', error);
@@ -31,7 +31,7 @@ const AdminEmpDashboard = () => {
   const fetchShopOrders = async (shopid) => {
     try {
       setOrdersLoading(true);
-      const response = await axios.get(`http://localhost:5000/api/orders/shop/${shopid}`);
+      const response = await axios.get(`${API_BASE_URL}/api/orders/shop/${shopid}`);
       setShopOrders(response.data.orders || []);
     } catch (error) {
       console.error('Error fetching shop orders:', error);
@@ -65,7 +65,7 @@ const AdminEmpDashboard = () => {
   const handleApproveOrder = async (billId) => {
     try {
       setActionLoading(billId);
-      await axios.put(`http://localhost:5000/api/orders/approve/${billId}`);
+      await axios.put(`${API_BASE_URL}/api/orders/approve/${billId}`);
       
       setShopOrders(prevOrders => 
         prevOrders.map(order => 
@@ -90,7 +90,7 @@ const AdminEmpDashboard = () => {
     }
     try {
       setActionLoading(billId);
-      await axios.put(`http://localhost:5000/api/orders/reject/${billId}`);
+      await axios.put(`${API_BASE_URL}/api/orders/reject/${billId}`);
       
       setShopOrders(prevOrders => 
         prevOrders.filter(order => order.billId !== billId)

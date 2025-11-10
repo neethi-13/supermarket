@@ -9,6 +9,7 @@ const CusApplyOrder = ({ user }) => {
   const [loading, setLoading] = useState(false);
   const [orderPlaced, setOrderPlaced] = useState(false);
   const [isInitialized, setIsInitialized] = useState(false);
+  const API_BASE_URL = window.location.hostname === "localhost" ? "http://localhost:5000" : "https://supermarket-208b.onrender.com/";
 
   // Load state from localStorage on component mount
   useEffect(() => {
@@ -47,7 +48,7 @@ const CusApplyOrder = ({ user }) => {
   const fetchProducts = async () => {
     try {
       setLoading(true);
-      const response = await axios.get('http://localhost:5000/api/products/all');
+      const response = await axios.get(`${API_BASE_URL}/api/products/all`);
       const processedProducts = response.data.map(product => ({
         ...product,
         price: convertDecimal128(product.price)
@@ -169,7 +170,7 @@ const CusApplyOrder = ({ user }) => {
         }))
       };
 
-      await axios.post('http://localhost:5000/api/orders/add', orderData);
+      await axios.post(`${API_BASE_URL}/api/orders/add`, orderData);
       
       // Clear everything ONLY after successful order placement
       clearAllState();

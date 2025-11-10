@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import './CusDashboard.css';
+
 const CusDashboard = ({ user }) => {
   const [timeFilter, setTimeFilter] = useState('today');
+  const API_BASE_URL = window.location.hostname === "localhost" ? "http://localhost:5000" : "https://supermarket-208b.onrender.com/";
   const [stats, setStats] = useState({
     totalOrders: 0,
     pendingOrders: 0,
@@ -40,7 +42,7 @@ const CusDashboard = ({ user }) => {
     try {
       setLoading(true);
       
-      const ordersRes = await axios.get(`http://localhost:5000/api/orders/shop/${user.shopid}`);
+      const ordersRes = await axios.get(`${API_BASE_URL}/api/orders/shop/${user.shopid}`);
       const orders = ordersRes.data.orders || [];
 
       const processedOrders = orders.map(order => ({

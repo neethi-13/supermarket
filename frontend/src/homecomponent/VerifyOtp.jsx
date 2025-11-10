@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
 const VerifyOtp = ({ onSuccess, onSwitchToLogin, emailFromForgot }) => {
+  const API_BASE_URL = window.location.hostname === "localhost" ? "http://localhost:5000" : "https://supermarket-208b.onrender.com/";
   const [formData, setFormData] = useState({
     email: '',
     otp: '',
@@ -34,7 +35,7 @@ const VerifyOtp = ({ onSuccess, onSwitchToLogin, emailFromForgot }) => {
     setError('');
 
     try {
-      await axios.post('http://localhost:5000/api/auth/verify-otp', formData);
+      await axios.post(`${API_BASE_URL}/api/auth/verify-otp`, formData);
       onSuccess();
     } catch (err) {
       setError(err.response?.data?.message || 'OTP verification failed');

@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 
 const ForgotPassword = ({ onSuccess, onSwitchToLogin }) => {
+  const API_BASE_URL = window.location.hostname === "localhost" ? "http://localhost:5000" : "https://supermarket-208b.onrender.com/";
   const [email, setEmail] = useState('');
   const [loading, setLoading] = useState(false);
   const [message, setMessage] = useState('');
@@ -14,7 +15,7 @@ const ForgotPassword = ({ onSuccess, onSwitchToLogin }) => {
     setMessage('');
 
     try {
-      const response = await axios.post('http://localhost:5000/api/auth/forgot-password', {
+      const response = await axios.post(`${API_BASE_URL}/api/auth/forgot-password`, {
         email,
         devReturnOtp: process.env.NODE_ENV === 'development' // For testing
       });

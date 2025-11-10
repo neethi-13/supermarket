@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import './CusOurOrders.css';
+
 const CusOurOrders = ({ user }) => {
   const [orders, setOrders] = useState([]);
   const [loading, setLoading] = useState(false);
-
+  const API_BASE_URL = window.location.hostname === "localhost" ? "http://localhost:5000" : "https://supermarket-208b.onrender.com/";
   useEffect(() => {
     if (user) {
       fetchOrders();
@@ -14,7 +15,7 @@ const CusOurOrders = ({ user }) => {
   const fetchOrders = async () => {
     try {
       setLoading(true);
-      const response = await axios.get(`http://localhost:5000/api/orders/shop/${user.shopid}`);
+      const response = await axios.get(`${API_BASE_URL}/api/orders/shop/${user.shopid}`);
       setOrders(response.data.orders || []);
     } catch (error) {
       console.error('Error fetching orders:', error);

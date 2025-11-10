@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 
 const LoginForm = ({ onSuccess, onSwitchToSignup, onSwitchToForgotPassword }) => {
+  const API_BASE_URL = window.location.hostname === "localhost" ? "http://localhost:5000" : "https://supermarket-208b.onrender.com/";
   const [formData, setFormData] = useState({
     identifier: '',
     password: ''
@@ -22,7 +23,7 @@ const LoginForm = ({ onSuccess, onSwitchToSignup, onSwitchToForgotPassword }) =>
     setError('');
 
     try {
-      const response = await axios.post('http://localhost:5000/api/auth/login', formData);
+      const response = await axios.post(`${API_BASE_URL}/api/auth/login`, formData);
       onSuccess(response.data.user);
     } catch (err) {
       setError(err.response?.data?.message || 'Login failed');

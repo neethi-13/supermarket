@@ -8,7 +8,7 @@ const AdminAddProducts = () => {
   const [loading, setLoading] = useState(false);
   const [showForm, setShowForm] = useState(false);
   const [editingProduct, setEditingProduct] = useState(null);
-
+  const API_BASE_URL = window.location.hostname === "localhost" ? "http://localhost:5000" : "https://supermarket-208b.onrender.com/";
   const [formData, setFormData] = useState({
     product_id: "",
     product_name: "",
@@ -31,7 +31,7 @@ const AdminAddProducts = () => {
   const fetchProducts = async () => {
     try {
       setLoading(true);
-      const response = await axios.get("http://localhost:5000/api/products/all");
+      const response = await axios.get(`${API_BASE_URL}/api/products/all`);
       const processedProducts = response.data.map((product) => ({
         ...product,
         price: convertDecimal128(product.price),
@@ -108,13 +108,13 @@ const AdminAddProducts = () => {
   try {
     if (editingProduct) {
       await axios.put(
-        `http://localhost:5000/api/products/update/${editingProduct.product_id}`,
+        `${API_BASE_URL}/api/products/update/${editingProduct.product_id}`,
         productData
       );
       alert("✅ Product updated successfully!");
     } else {
       const res = await axios.post(
-        "http://localhost:5000/api/products/add",
+        `${API_BASE_URL}/api/products/add`,
         productData
       );
       console.log("Server Response:", res.data);

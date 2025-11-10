@@ -14,6 +14,7 @@ const AdminOrder = () => {
   const [isInitialized, setIsInitialized] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [darkTheme, setDarkTheme] = useState(false);
+  const API_BASE_URL = window.location.hostname === "localhost" ? "http://localhost:5000" : "https://supermarket-208b.onrender.com/";
 
   // Load state from localStorage on component mount
   useEffect(() => {
@@ -61,7 +62,7 @@ const AdminOrder = () => {
   const fetchCustomers = async () => {
     try {
       setLoading(true);
-      const response = await axios.get('http://localhost:5000/api/users/customers');
+      const response = await axios.get(`${API_BASE_URL}/api/users/customers`);
       setCustomers(response.data.customers || []);
     } catch (error) {
       console.error('Error fetching customers:', error);
@@ -72,7 +73,7 @@ const AdminOrder = () => {
 
   const fetchProducts = async () => {
     try {
-      const response = await axios.get('http://localhost:5000/api/products/all');
+      const response = await axios.get(`${API_BASE_URL}/api/products/all`);
       const processedProducts = response.data.map(product => ({
         ...product,
         price: convertDecimal128(product.price)
@@ -175,7 +176,7 @@ const AdminOrder = () => {
         }))
       };
 
-      await axios.post('http://localhost:5000/api/orders/add', orderData);
+      await axios.post(`${API_BASE_URL}/api/orders/add`, orderData);
       
       setCart([]);
       setOrderPlaced(true);
@@ -247,12 +248,12 @@ const AdminOrder = () => {
             <h2>Admin Order Management</h2>
             <p>Place orders on behalf of customer shops</p>
           </div>
-          <button 
+          {/* <button 
             className="admin-theme-toggle"
             onClick={() => setDarkTheme(!darkTheme)}
           >
             {darkTheme ? '☀️ Light' : '🌙 Dark'}
-          </button>
+          </button> */}
         </div>
 
         {/* Top Search Bar */}

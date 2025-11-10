@@ -13,7 +13,7 @@ const AdminDashboard = () => {
   const [loading, setLoading] = useState(true);
   const [allOrders, setAllOrders] = useState([]);
   const [allCustomers, setAllCustomers] = useState([]);
-
+  const API_BASE_URL = window.location.hostname === "localhost" ? "http://localhost:5000" : "https://supermarket-208b.onrender.com/";
   useEffect(() => {
     fetchDashboardData();
   }, [timeFilter]);
@@ -30,12 +30,12 @@ const AdminDashboard = () => {
       setLoading(true);
       
       // Fetch customers
-      const customersRes = await axios.get('http://localhost:5000/api/users/customers');
+      const customersRes = await axios.get(`${API_BASE_URL}/api/users/customers`);
       const customers = customersRes.data.customers || [];
       setAllCustomers(customers);
       
       // Fetch orders
-      const ordersRes = await axios.get('http://localhost:5000/api/orders/allorders');
+      const ordersRes = await axios.get(`${API_BASE_URL}/api/orders/allorders`);
       const orders = ordersRes.data || [];
 
       // Process orders

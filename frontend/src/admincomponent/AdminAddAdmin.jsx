@@ -13,7 +13,7 @@ const AdminAddAdmin = () => {
   const [loading, setLoading] = useState(false);
   const [message, setMessage] = useState('');
   const [error, setError] = useState('');
-
+  const API_BASE_URL = window.location.hostname === "localhost" ? "http://localhost:5000" : "https://supermarket-208b.onrender.com/";
   const handleChange = (e) => {
     setFormData({
       ...formData,
@@ -34,7 +34,7 @@ const AdminAddAdmin = () => {
     }
 
     try {
-      await axios.post('http://localhost:5000/api/auth/signup', formData);
+      await axios.post(`${API_BASE_URL}/api/auth/signup`, formData);
       setMessage('Admin user created successfully!');
       setFormData({
         name: '',
