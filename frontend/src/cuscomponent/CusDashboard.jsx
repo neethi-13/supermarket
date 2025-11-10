@@ -4,7 +4,7 @@ import './CusDashboard.css';
 
 const CusDashboard = ({ user }) => {
   const [timeFilter, setTimeFilter] = useState('today');
-  const API_BASE_URL = window.location.hostname === "localhost" ? "http://localhost:5000" : "https://supermarket-208b.onrender.com/";
+  const API_BASE_URL = window.location.hostname === "localhost" ? "http://localhost:5000" : "https://supermarket-208b.onrender.com";
   const [stats, setStats] = useState({
     totalOrders: 0,
     pendingOrders: 0,

@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import './AdminAddAdmin.css';
 const AdminAddAdmin = () => {
+  const API_BASE_URL = window.location.hostname === "localhost" ? "http://localhost:5000" : "https://supermarket-208b.onrender.com";
   const [formData, setFormData] = useState({
     name: '',
     role: 'admin',
@@ -13,7 +14,6 @@ const AdminAddAdmin = () => {
   const [loading, setLoading] = useState(false);
   const [message, setMessage] = useState('');
   const [error, setError] = useState('');
-  const API_BASE_URL = window.location.hostname === "localhost" ? "http://localhost:5000" : "https://supermarket-208b.onrender.com/";
   const handleChange = (e) => {
     setFormData({
       ...formData,

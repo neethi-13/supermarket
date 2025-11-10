@@ -3,13 +3,13 @@ import axios from 'axios';
 import './CusApplyOrder.css';
 
 const CusApplyOrder = ({ user }) => {
+  const API_BASE_URL = window.location.hostname === "localhost" ? "http://localhost:5000" : "https://supermarket-208b.onrender.com";
   const [products, setProducts] = useState([]);
   const [cart, setCart] = useState([]);
   const [searchTerm, setSearchTerm] = useState('');
   const [loading, setLoading] = useState(false);
   const [orderPlaced, setOrderPlaced] = useState(false);
   const [isInitialized, setIsInitialized] = useState(false);
-  const API_BASE_URL = window.location.hostname === "localhost" ? "http://localhost:5000" : "https://supermarket-208b.onrender.com/";
 
   // Load state from localStorage on component mount
   useEffect(() => {

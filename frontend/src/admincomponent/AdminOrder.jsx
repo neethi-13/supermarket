@@ -3,6 +3,7 @@ import axios from 'axios';
 import './Aorder.css';
 
 const AdminOrder = () => {
+  const API_BASE_URL = window.location.hostname === "localhost" ? "http://localhost:5000" : "https://supermarket-208b.onrender.com";
   const [customers, setCustomers] = useState([]);
   const [products, setProducts] = useState([]);
   const [selectedShop, setSelectedShop] = useState(null);
@@ -14,7 +15,6 @@ const AdminOrder = () => {
   const [isInitialized, setIsInitialized] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [darkTheme, setDarkTheme] = useState(false);
-  const API_BASE_URL = window.location.hostname === "localhost" ? "http://localhost:5000" : "https://supermarket-208b.onrender.com/";
 
   // Load state from localStorage on component mount
   useEffect(() => {

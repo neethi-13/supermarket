@@ -5,7 +5,7 @@ import './CusOurOrders.css';
 const CusOurOrders = ({ user }) => {
   const [orders, setOrders] = useState([]);
   const [loading, setLoading] = useState(false);
-  const API_BASE_URL = window.location.hostname === "localhost" ? "http://localhost:5000" : "https://supermarket-208b.onrender.com/";
+  const API_BASE_URL = window.location.hostname === "localhost" ? "http://localhost:5000" : "https://supermarket-208b.onrender.com";
   useEffect(() => {
     if (user) {
       fetchOrders();

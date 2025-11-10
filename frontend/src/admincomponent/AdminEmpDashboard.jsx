@@ -3,6 +3,7 @@ import axios from 'axios';
 import './AdminEmpDashboard.css';
 
 const AdminEmpDashboard = () => {
+  const API_BASE_URL = window.location.hostname === "localhost" ? "http://localhost:5000" : "https://supermarket-208b.onrender.com";
   const [customers, setCustomers] = useState([]);
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedShop, setSelectedShop] = useState(null);
@@ -11,7 +12,6 @@ const AdminEmpDashboard = () => {
   const [ordersLoading, setOrdersLoading] = useState(false);
   const [actionLoading, setActionLoading] = useState(null);
   const [showPopup, setShowPopup] = useState(false);
-  const API_BASE_URL = window.location.hostname === "localhost" ? "http://localhost:5000" : "https://supermarket-208b.onrender.com/";
   useEffect(() => {
     fetchCustomers();
   }, []);

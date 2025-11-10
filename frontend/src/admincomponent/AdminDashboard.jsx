@@ -3,6 +3,7 @@ import axios from 'axios';
 import './AdminDashboard.css';
 
 const AdminDashboard = () => {
+  const API_BASE_URL = window.location.hostname === "localhost" ? "http://localhost:5000" : "https://supermarket-208b.onrender.com";
   const [timeFilter, setTimeFilter] = useState('today');
   const [stats, setStats] = useState({
     totalOrders: 0,
@@ -13,7 +14,6 @@ const AdminDashboard = () => {
   const [loading, setLoading] = useState(true);
   const [allOrders, setAllOrders] = useState([]);
   const [allCustomers, setAllCustomers] = useState([]);
-  const API_BASE_URL = window.location.hostname === "localhost" ? "http://localhost:5000" : "https://supermarket-208b.onrender.com/";
   useEffect(() => {
     fetchDashboardData();
   }, [timeFilter]);
